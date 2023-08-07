@@ -10,7 +10,12 @@ const LastPlayed = () => {
       <Typography variant={'h3'}>Last played</Typography>
       <div className={styles.last_played_children}>
         {lastPlayed.map((p) => (
-          <LastPlayedDiv img={p.img} text={p.text} hover={p.color} />
+          <LastPlayedDiv
+            key={p.color}
+            img={p.img}
+            text={p.text}
+            hover={p.color}
+          />
         ))}
       </div>
     </div>

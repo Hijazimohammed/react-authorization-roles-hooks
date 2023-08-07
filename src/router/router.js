@@ -8,7 +8,7 @@ import GamesPage from '../pages/GamesPage';
 const routes = [
   {
     path: PATHS.HOME,
-    element: <Typography variant={'h1'}>Home</Typography>,
+    element: <GamesPage />,
   },
   {
     path: PATHS.LOGIN,
@@ -17,10 +17,6 @@ const routes = [
   {
     path: PATHS.SIGNUP,
     element: <SignupPage />,
-  },
-  {
-    path: PATHS.GAMES,
-    element: <GamesPage />,
   },
   {
     path: PATHS.ERRORS.NOT_FOUND,
