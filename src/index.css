@@ -5,9 +5,37 @@
   font-family: 'Raanana';
   src: url('/public/fonts/raanana.ttf');
 }
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/public/fonts/Gilroy-Black.ttf'),
+    url('/public/fonts/Gilroy-BlackItalic.ttf'),
+    url('/public/fonts/Gilroy-Bold.ttf'),
+    url('/public/fonts/Gilroy-BoldItalic.ttf'),
+    url('/public/fonts/Gilroy-ExtraBold.ttf'),
+    url('/public/fonts/Gilroy-ExtraBoldItalic.ttf'),
+    url('/public/fonts/Gilroy-Heavy.ttf'),
+    url('/public/fonts/Gilroy-HeavyItalic.ttf'),
+    url('/public/fonts/Gilroy-Light.ttf'),
+    url('/public/fonts/Gilroy-LightItalic.ttf'),
+    url('/public/fonts/Gilroy-Medium.ttf'),
+    url('/public/fonts/Gilroy-MediumItalic.ttf'),
+    url('/public/fonts/Gilroy-Regular.ttf'),
+    url('/public/fonts/Gilroy-RegularItalic.ttf'),
+    url('/public/fonts/Gilroy-SemiBold.ttf'),
+    url('/public/fonts/Gilroy-SemiBoldItalic.ttf'),
+    url('/public/fonts/Gilroy-Thin.ttf'),
+    url('/public/fonts/Gilroy-ThinItalic.ttf'),
+    url('/public/fonts/Gilroy-UltraLight.ttf'),
+    url('/public/fonts/Gilroy-UltraLightItalic.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Raanana' sans-serif;
+}
+
+body {
+  overflow: hidden;
 }

@@ -1,0 +1,37 @@
+.div_parent {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+}
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9px;
+  height: 90%;
+  margin: auto 0;
+  border-radius: 38px;
+  padding: 0.2rem;
+}
+.line_light {
+  background: #fff;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  -o-border-radius: 38px;
+}
+.line_dark {
+  background: #222;
+  box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.57) inset;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
