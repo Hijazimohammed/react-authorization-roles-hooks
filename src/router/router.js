@@ -10,6 +10,7 @@ import GamesOutlet from '../components/GamesOutlet';
 import GuestGuard from '../components/Guards/GuestGuard';
 import UserGuard from '../components/Guards/UserGaurd';
 import AdminGuard from '../components/Guards/AdminGuard';
+import NotFound from '../pages/NotFound';
 
 export const routes = (role) => [
   {
@@ -56,7 +57,7 @@ export const routes = (role) => [
   },
   {
     path: PATHS.ERRORS.NOT_FOUND,
-    element: <Typography variant={'h1'}>Page not found 404</Typography>,
+    element: <NotFound />,
   },
   {
     path: '*',
