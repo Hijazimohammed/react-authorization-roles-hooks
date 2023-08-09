@@ -5,7 +5,6 @@ import Router from './router';
 function App() {
   const { role } = useAuthContext();
   const { theme } = useThemeContext();
-  console.log(role, '____', theme);
   return (
     <div className='app'>
       <Router />

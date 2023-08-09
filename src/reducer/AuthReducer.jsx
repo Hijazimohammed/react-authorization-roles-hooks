@@ -10,11 +10,11 @@ export const auth_reducer = (state, action) => {
       };
 
     case AUTH_ACTIONS.AUTHORIZE:
-      const token = action?.payload?.token || state?.token;
-      const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER;
+      const token = action?.payload?.user?.token || state?.token;
+      const role = action?.payload?.user?.isAdmin ? ROLES.ADMIN : ROLES.USER;
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
-      localStorage.setItem('user', JSON.stringify(action.payload));
+      localStorage.setItem('user', JSON.stringify(action.payload.user));
 
       return {
         ...state,

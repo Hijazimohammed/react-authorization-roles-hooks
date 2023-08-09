@@ -13,7 +13,11 @@ const Card = ({ bg, hero, title, text, name }) => {
       {name == 'spiderman' ? (
         <img className={styles.hero_spider} src={hero} alt='dragon hero' />
       ) : (
-        <img className={styles.hero} src={hero} alt='dragon hero' />
+        <img
+          className={name == 'superman' ? styles.hero_super : styles.hero}
+          src={hero}
+          alt='dragon hero'
+        />
       )}
       {title && (
         <img className={styles.card_title} src={title} alt='dragon title' />

@@ -1,10 +1,18 @@
 import React from 'react';
 import styles from './style.module.css';
+import { useThemeContext } from '../../context/ThemeContext';
+import { THEMES } from '../../constants';
 
 const Theme = () => {
+  const { theme, changeTheme } = useThemeContext();
+
   return (
-    <div className={`${styles.theme} ${styles.theme_light}`}>
+    <div
+      className={`${styles.theme} ${
+        theme === THEMES.LIGHT ? styles.theme_light : styles.theme_dark
+      }`}>
       <svg
+        onClick={changeTheme}
         xmlns='http://www.w3.org/2000/svg'
         width='40'
         height='40'
@@ -18,6 +26,7 @@ const Theme = () => {
         />
       </svg>{' '}
       <svg
+        onClick={changeTheme}
         xmlns='http://www.w3.org/2000/svg'
         width='40'
         height='40'

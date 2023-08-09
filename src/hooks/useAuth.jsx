@@ -8,9 +8,9 @@ import { AUTH_API_ENDPOINT } from '../router/pathes';
 
 const initialState = {
   isAuth: false,
-  user: null,
-  token: null,
-  role: ROLES.GUEST,
+  user: JSON.parse(localStorage.getItem('user')) || null,
+  token: localStorage.getItem('token') || null,
+  role: localStorage.getItem('role') || ROLES.GUEST,
   error: null,
   isLoading: false,
 };
@@ -18,6 +18,7 @@ const initialState = {
 const useAuth = () => {
   const [state, dispatch] = useReducer(auth_reducer, initialState);
   const token = state.token || localStorage.getItem('token');
+
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
@@ -29,7 +30,8 @@ const useAuth = () => {
         AUTH_API + AUTH_API_ENDPOINT.LOGIN,
         body
       );
-      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data });
+      console.log(data);
+      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: { user: data } });
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
@@ -42,7 +44,7 @@ const useAuth = () => {
         AUTH_API + AUTH_API_ENDPOINT.SIGNUP,
         body
       );
-      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data });
+      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: { user: data } });
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
@@ -59,7 +61,7 @@ const useAuth = () => {
         AUTH_API + AUTH_API_ENDPOINT.PROFILE,
         config
       );
-      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data });
+      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: { user: data } });
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }

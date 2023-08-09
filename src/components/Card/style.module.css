@@ -61,6 +61,26 @@
   -ms-transform: scale(0.7);
   -o-transform: scale(0.7);
 }
+.hero_super {
+  position: absolute;
+  bottom: -44px;
+  left: -30px;
+  border-radius: 60px;
+  transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+}
 .card_text {
   position: absolute;
   bottom: 1rem;
@@ -74,20 +94,31 @@
   font-weight: 800;
 }
 .card:hover .hero_spider {
-  transform: scale(0.8) translate(24px, -19px);
-  -webkit-transform: scale(0.8) translate(24px, -19px);
-  -moz-transform: scale(0.8) translate(24px, -19px);
-  -ms-transform: scale(0.8) translate(24px, -19px);
-  -o-transform: scale(0.8) translate(24px, -19px);
+  transform: scale(0.8) translate(24px, 0px);
+  -webkit-transform: scale(0.8) translate(24px, 0px);
+  -moz-transform: scale(0.8) translate(24px, 0px);
+  -ms-transform: scale(0.8) translate(24px, 0px);
+  -o-transform: scale(0.8) translate(24px, 0px);
+}
+.card:hover .hero_super {
+  transform: scale(0.9) translate(24px, -40px);
+  -webkit-transform: scale(0.9) translate(24px, -40px);
+  -moz-transform: scale(0.9) translate(24px, -40px);
+  -ms-transform: scale(0.9) translate(24px, -40px);
+  -o-transform: scale(0.9) translate(24px, -40px);
 }
 
 .card:hover .hero {
-  border-radius: 49px;
-  transform: scale(0.8) translate(24px, -19px);
-  -webkit-transform: scale(0.8) translate(24px, -19px);
-  -moz-transform: scale(0.8) translate(24px, -19px);
-  -ms-transform: scale(0.8) translate(24px, -19px);
-  -o-transform: scale(0.8) translate(24px, -19px);
+  border-radius: 55px;
+  transform: scale(0.9) translate(40px, -30px);
+  -webkit-transform: scale(0.9) translate(40px, -30px);
+  -moz-transform: scale(0.9) translate(40px, -30px);
+  -ms-transform: scale(0.9) translate(40px, -30px);
+  -o-transform: scale(0.9) translate(40px, -30px);
+  -webkit-border-radius: 55px;
+  -moz-border-radius: 55px;
+  -ms-border-radius: 55px;
+  -o-border-radius: 55px;
 }
 /* .gamer_profile_card {
   width: 600px;

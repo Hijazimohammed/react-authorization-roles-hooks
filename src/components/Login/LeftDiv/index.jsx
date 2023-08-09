@@ -11,6 +11,7 @@ import Or from '../../OrSeprator';
 import Image from '../../Image';
 import { useNavigate } from 'react-router-dom';
 import { PATHS } from '../../../router/pathes';
+import { useAuthContext } from '../../../context/AuthContext';
 
 const inputs = [
   {
@@ -63,13 +64,14 @@ const LeftDiv = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const { login, isLoading } = useAuthContext();
   const navigate = useNavigate();
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
-  const onHandleSubmit = (data) => {
-    console.log(data);
+  const onHandleSubmit = (body) => {
+    login(body);
   };
 
   return (
@@ -150,7 +152,7 @@ const LeftDiv = () => {
             )
           )}
           <button type='submit' className={styles.form__submit}>
-            submit
+            {isLoading ? 'loading...' : 'submit'}
           </button>
         </form>
         <div className={styles.register}>

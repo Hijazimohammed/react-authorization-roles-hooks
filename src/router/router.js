@@ -4,19 +4,55 @@ import { Typography } from '../components/Typography';
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import GamesPage from '../pages/GamesPage';
+import ProfilePage from '../pages/ProfilePage';
+import UsersPage from '../pages/UsersPage';
+import GamesOutlet from '../components/GamesOutlet';
+import GuestGuard from '../components/Guards/GuestGuard';
+import UserGuard from '../components/Guards/UserGaurd';
+import AdminGuard from '../components/Guards/AdminGuard';
 
-const routes = [
-  {
-    path: PATHS.HOME,
-    element: <GamesPage />,
-  },
+export const routes = (role) => [
   {
     path: PATHS.LOGIN,
-    element: <LoginPage />,
+    element: (
+      <GuestGuard>
+        <LoginPage />
+      </GuestGuard>
+    ),
   },
   {
     path: PATHS.SIGNUP,
-    element: <SignupPage />,
+    element: (
+      <GuestGuard>
+        <SignupPage />
+      </GuestGuard>
+    ),
+  },
+  {
+    path: PATHS.HOME,
+    element: (
+      <UserGuard>
+        <GamesPage />
+      </UserGuard>
+    ),
+    children: [
+      {
+        index: true,
+        element: <GamesOutlet />,
+      },
+      {
+        path: PATHS.PROFILE,
+        element: <ProfilePage />,
+      },
+      {
+        path: PATHS.USERS,
+        element: (
+          <AdminGuard>
+            <UsersPage />
+          </AdminGuard>
+        ),
+      },
+    ],
   },
   {
     path: PATHS.ERRORS.NOT_FOUND,
@@ -27,5 +63,3 @@ const routes = [
     element: <Navigate to={PATHS.ERRORS.NOT_FOUND} replace={true} />,
   },
 ];
-
-export { routes };

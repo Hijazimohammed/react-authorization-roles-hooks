@@ -13,9 +13,11 @@ export const ThemeProvider = ({ children }) => {
       prevTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT
     );
   };
+
   useEffect(() => {
     localStorage.setItem('theme', theme);
   }, [theme]);
+
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>
       {children}

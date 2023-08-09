@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import { PATHS } from '../../../router/pathes';
+import { useAuthContext } from '../../../context/AuthContext';
 
 const inputs = [
   {
@@ -77,10 +78,16 @@ const LeftDiv = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  const { signup, isLoading } = useAuthContext();
   const navigate = useNavigate();
 
   const onHandleSubmit = (body) => {
-    console.log(body);
+    const data = {
+      email: body?.email,
+      name: body?.username,
+      password: body?.password,
+    };
+    signup(data);
   };
   return (
     <div className={styles.section}>
@@ -123,7 +130,7 @@ const LeftDiv = () => {
               </div>
             ))}
             <button type='submit' className={styles.form__submit}>
-              submit
+              {isLoading ? 'loading...' : 'submit'}
             </button>
           </form>
         </div>

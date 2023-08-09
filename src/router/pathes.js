@@ -2,6 +2,7 @@ export const PATHS = {
   HOME: '/',
   LOGIN: '/login',
   SIGNUP: '/signup',
+  GAMES: '/games',
   PROFILE: '/profile',
   USERS: '/users',
   ERRORS: {
@@ -12,6 +13,7 @@ export const PATHS = {
 export const AUTH_API_ENDPOINT = {
   LOGIN: 'users/login',
   SIGNUP: 'users/signup',
-  PROFILE: ' users/profile',
-  USERS: ' users',
+  PROFILE: 'users/profile',
+  USERS: 'users',
+  DELETE_USER: 'users/:id',
 };
