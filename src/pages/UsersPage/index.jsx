@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useDeferredValue, useEffect, useState } from 'react';
 import Table from '../../components/Table';
 import { TABLE_COLUMNS } from '../../constants/TableColumns';
@@ -8,7 +9,6 @@ import { AUTH_API } from '../../config/api';
 import { AUTH_API_ENDPOINT } from '../../router/pathes';
 
 const UsersPage = () => {
-  const [id, setId] = useState('');
   const [num, setNum] = useState(1);
   const [search, setSearch] = useState('');
   const [size, setSize] = useState(10);
@@ -40,6 +40,7 @@ const UsersPage = () => {
 
   useEffect(() => {
     getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deferredQuery, size, num]);
 
   return (
