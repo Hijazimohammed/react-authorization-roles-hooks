@@ -35,3 +35,12 @@
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
 }
+
+.pagination_btn {
+  background-color: #ccc;
+  color: #000;
+}
+.pagination_btn:hover {
+  background-color: #000;
+  color: #ccc;
+}

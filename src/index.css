@@ -45,3 +45,16 @@ body {
 .dark {
   color: #fff;
 }
+
+button {
+  background: tomato;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}

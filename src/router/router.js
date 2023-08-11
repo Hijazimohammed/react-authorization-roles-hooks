@@ -1,6 +1,5 @@
 import { Navigate } from 'react-router-dom';
 import { PATHS } from './pathes';
-import { Typography } from '../components/Typography';
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import GamesPage from '../pages/GamesPage';
@@ -12,7 +11,7 @@ import UserGuard from '../components/Guards/UserGaurd';
 import AdminGuard from '../components/Guards/AdminGuard';
 import NotFound from '../pages/NotFound';
 
-export const routes = (role) => [
+const authRoutes = [
   {
     path: PATHS.LOGIN,
     element: (
@@ -29,6 +28,9 @@ export const routes = (role) => [
       </GuestGuard>
     ),
   },
+];
+export const routes = [
+  ...authRoutes,
   {
     path: PATHS.HOME,
     element: (

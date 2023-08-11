@@ -66,11 +66,15 @@ const UsersPage = () => {
         isLoading={isLoading}
       />
       <div className={styles.pagination_buttons}>
-        <button onClick={prevSubmit} disabled={users.page == 1 ? true : false}>
+        <button
+          className={styles.pagination_btn}
+          onClick={prevSubmit}
+          disabled={users.page == 1 ? true : false}>
           prev
         </button>
-        <button>{users.page}</button>
+        <button className={styles.pagination_btn}>{users.page}</button>
         <button
+          className={styles.pagination_btn}
           onClick={nextSubmit}
           disabled={users.page == users.pages ? true : false}>
           next

@@ -34,9 +34,11 @@
 .modal_content h2 {
   padding: 1rem;
   font-family: 'Inter';
+  color: #000;
 }
 .modal_content p {
   font-family: 'Inter';
+  color: #000;
 }
 .modal_actions {
   padding-top: 1rem;
@@ -51,6 +53,7 @@
   cursor: pointer;
   border: 1px solid #ddd;
   color: #000;
+  background-color: #ddd;
 }
 .close {
   width: 100%;
