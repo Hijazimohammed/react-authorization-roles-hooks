@@ -1,8 +1,9 @@
 .right__div {
-  width: 100%;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: flex-start;
+  /* position: relative; */
   height: 100%;
 }
 .right__div__icon {
@@ -16,7 +17,7 @@
 .right__div__text {
   display: flex;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 .right__div__text .qout {
   height: 20px;
@@ -41,13 +42,14 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 38px;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 .right__div__image {
-  position: absolute;
-  transform: translate(20rem, 11rem);
-  -webkit-transform: translate(20rem, 11rem);
-  -moz-transform: translate(20rem, 11rem);
-  -ms-transform: translate(20rem, 11rem);
-  -o-transform: translate(20rem, 11rem);
+  align-self: flex-end;
+  width: 200px;
+}
+.right__div__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

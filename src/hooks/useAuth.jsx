@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { ROLES } from '../constants';
+import { ROLES, showDialog } from '../constants';
 import { auth_reducer } from '../reducer/AuthReducer';
 import { AUTH_ACTIONS } from '../constants/AuthActions';
 import axios from 'axios';
@@ -30,8 +30,10 @@ const useAuth = () => {
         AUTH_API + AUTH_API_ENDPOINT.LOGIN,
         body
       );
+      showDialog('success', 'Login successfully!', 'success');
       dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: { user: data } });
     } catch (error) {
+      showDialog('error', 'email or password invalid!', 'error');
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
   };
@@ -43,13 +45,16 @@ const useAuth = () => {
         AUTH_API + AUTH_API_ENDPOINT.SIGNUP,
         body
       );
+      showDialog('success', 'Sign up successfully!', 'success');
       dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: { user: data } });
     } catch (error) {
+      showDialog('error', 'Something went wrong!', 'error');
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
   };
 
   const logout = () => {
+    showDialog('success', 'Log out successfully!', 'success');
     dispatch({ type: AUTH_ACTIONS.LOGOUT });
   };
 

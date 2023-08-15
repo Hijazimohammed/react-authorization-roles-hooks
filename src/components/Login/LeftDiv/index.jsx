@@ -39,20 +39,7 @@ const schema = yup.object().shape({
   password: yup
     .string()
     .required('Password is required')
-    .min(8, 'Password must be at least 8 characters long')
-    .matches(
-      RegExp('(.*[a-z].*)'),
-      'Password must contain at least one Lowercase letter'
-    )
-    .matches(
-      RegExp('(.*[A-Z].*)'),
-      'Password must contain at least one Uppercase letter'
-    )
-    .matches(RegExp('(.*\\d.*)'), 'Password must contain at least one Number ')
-    .matches(
-      RegExp('[!@#$%^&*(),.?":{}|<>]'),
-      'Password must contain at least one Special character'
-    ),
+    .min(8, 'Password must be at least 8 characters long'),
 });
 
 const LeftDiv = () => {
@@ -128,8 +115,8 @@ const LeftDiv = () => {
                   {showPassword ? (
                     <svg
                       onClick={handleShowPassword}
-                      stroke='currentColor'
-                      fill='currentColor'
+                      stroke='gray'
+                      fill='gray'
                       strokeWidth='0'
                       viewBox='0 0 24 24'
                       height='2rem'

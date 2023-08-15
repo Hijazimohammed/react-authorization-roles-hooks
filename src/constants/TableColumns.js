@@ -16,7 +16,9 @@ export const TABLE_COLUMNS = (handleDelete, handleEdit) => [
     title: 'Actions',
     render: (data) => (
       <div onClick={(e) => e.stopPropagation()}>
-        <button onClick={() => handleDelete(data._id)}>delete</button>
+        <button className='del_btn' onClick={() => handleDelete(data._id)}>
+          delete
+        </button>
         {/* <button onClick={() => handleEdit(data.id)}>edit</button> */}
       </div>
     ),

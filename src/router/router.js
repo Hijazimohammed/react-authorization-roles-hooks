@@ -1,15 +1,16 @@
 import { Navigate } from 'react-router-dom';
 import { PATHS } from './pathes';
-import LoginPage from '../pages/LoginPage';
-import SignupPage from '../pages/SignupPage';
-import GamesPage from '../pages/GamesPage';
-import ProfilePage from '../pages/ProfilePage';
-import UsersPage from '../pages/UsersPage';
-import GamesOutlet from '../components/GamesOutlet';
-import GuestGuard from '../components/Guards/GuestGuard';
-import UserGuard from '../components/Guards/UserGaurd';
-import AdminGuard from '../components/Guards/AdminGuard';
-import NotFound from '../pages/NotFound';
+import { lazy } from 'react';
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const SignupPage = lazy(() => import('../pages/SignupPage'));
+const GamesPage = lazy(() => import('../pages/GamesPage'));
+const ProfilePage = lazy(() => import('../pages/ProfilePage'));
+const UsersPage = lazy(() => import('../pages/UsersPage'));
+const GamesOutlet = lazy(() => import('../components/GamesOutlet'));
+const GuestGuard = lazy(() => import('../components/Guards/GuestGuard'));
+const UserGuard = lazy(() => import('../components/Guards/UserGaurd'));
+const AdminGuard = lazy(() => import('../components/Guards/AdminGuard'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 const authRoutes = [
   {

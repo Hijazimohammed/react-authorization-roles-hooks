@@ -46,7 +46,7 @@ body {
   color: #fff;
 }
 
-button {
+.del_btn {
   background: tomato;
   border: none;
   padding: 0.5rem;

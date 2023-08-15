@@ -1,12 +1,14 @@
 /* eslint-disable eqeqeq */
 import React, { useDeferredValue, useEffect, useState } from 'react';
-import Table from '../../components/Table';
 import { TABLE_COLUMNS } from '../../constants/TableColumns';
 import { Typography } from '../../components/Typography';
 import styles from './style.module.css';
 import UseApi from '../../hooks/useApi';
 import { AUTH_API } from '../../config/api';
 import { AUTH_API_ENDPOINT } from '../../router/pathes';
+import Table from '../../components/Table';
+import Swal from 'sweetalert2';
+import { showDialog } from '../../constants';
 
 const UsersPage = () => {
   const [num, setNum] = useState(1);
@@ -35,7 +37,24 @@ const UsersPage = () => {
     setNum((prev) => (num <= users.pages ? prev + 1 : num));
   };
   const onDeleteHandler = (id) => {
-    deleteUser(id);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        try {
+          deleteUser(id);
+          showDialog('Success', 'User deleted successfully', 'success');
+        } catch (error) {
+          showDialog('Error', 'Failed delete User', 'error');
+        }
+      }
+    });
   };
 
   useEffect(() => {
@@ -66,15 +85,11 @@ const UsersPage = () => {
         isLoading={isLoading}
       />
       <div className={styles.pagination_buttons}>
-        <button
-          className={styles.pagination_btn}
-          onClick={prevSubmit}
-          disabled={users.page == 1 ? true : false}>
+        <button onClick={prevSubmit} disabled={users.page == 1 ? true : false}>
           prev
         </button>
-        <button className={styles.pagination_btn}>{users.page}</button>
+        <button>{users.page}</button>
         <button
-          className={styles.pagination_btn}
           onClick={nextSubmit}
           disabled={users.page == users.pages ? true : false}>
           next
